@@ -1,6 +1,5 @@
 package be.perzival.dev.cube;
 
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.stream.IntStream;
 
@@ -98,10 +97,10 @@ public class Matrix<T> {
     }
 
     public String toString() {
-        StringBuilder builder = new StringBuilder("[\n");
-        for (int i = 0; i < this.row; i++) {
+        var builder = new StringBuilder("[\n");
+        for (var i = 0; i < this.row; i++) {
             builder.append("{");
-            for (int j = 0; j < this.column; j++) {
+            for (var j = 0; j < this.column; j++) {
                 builder.append(this.elements[i][j])
                         .append(j + 1 < this.column ? ", " : "");
             }

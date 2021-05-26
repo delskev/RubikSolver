@@ -10,7 +10,7 @@ public class Cube3X3 implements Cube{
 
 
     public Cube3X3() {
-        this.sideFaceMap = new EnumMap(FaceSide.class);
+        this.sideFaceMap = new EnumMap<>(FaceSide.class);
         this.sideFaceMap.put(FaceSide.FRONT, Face.of3X3(ColorCell.WHITE));
         this.sideFaceMap.put(FaceSide.UP, Face.of3X3(ColorCell.BLUE));
         this.sideFaceMap.put(FaceSide.LEFT, Face.of3X3(ColorCell.ORANGE));

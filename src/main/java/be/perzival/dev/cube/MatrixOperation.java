@@ -30,7 +30,7 @@ public class MatrixOperation {
 
     private static final <T> T[][] copy(T[][] original) {
         T[][] copy = (T[][]) new Object[original.length][];
-        for (int i = 0; i < original.length; ++i) {
+        for (var i = 0; i < original.length; ++i) {
             copy[i] = Arrays.copyOf(original[i], original[i].length);
         }
         return copy;

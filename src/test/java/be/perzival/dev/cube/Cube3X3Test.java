@@ -1,8 +1,6 @@
 package be.perzival.dev.cube;
 
 import be.perzival.dev.cube.exception.BadMovementException;
-import be.perzival.dev.cube.exception.NotationIsInvalid;
-import be.perzival.dev.cube.exception.WrongSideException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

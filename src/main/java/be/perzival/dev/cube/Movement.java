@@ -16,9 +16,8 @@ public class Movement {
     }
 
     public static Movement of(String notation) throws NotationIsInvalid, WrongSideException {
-        if (!isNotationValid(notation)) {
-            throw new NotationIsInvalid(notation);
-        }
+        isNotationValid(notation);
+
         char[] splittedNotation = notation.toCharArray();
         return splittedNotation.length == 2 ?
                 new Movement(Cube.FaceSide.valueFrom(splittedNotation[0]), splittedNotation[1] == '2' ? 2 : 1,splittedNotation[1] != '\'') :
@@ -50,8 +49,11 @@ public class Movement {
                 .toString();
     }
 
-    public static final boolean isNotationValid(String notation) {
-        return StringUtils.isAllEmpty(notation) || notation.length() <= 3 && Pattern.matches("[UDBFRLudbfrl]{1}[2']?[']?", notation);
+    public static final boolean isNotationValid(String notation) throws NotationIsInvalid {
+        if( StringUtils.isAllEmpty(notation) || notation.length() <= 3 && Pattern.matches("[UDBFRLudbfrl]{1}[2']?[']?", notation)) {
+            throw new NotationIsInvalid(notation);
+        }
+        return true;
     }
 
 

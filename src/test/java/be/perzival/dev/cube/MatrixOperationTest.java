@@ -3,48 +3,9 @@ package be.perzival.dev.cube;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class MatrixOperationTest {
-
-    @Test
-    void name() {
-        //given
-        //when
-        //then
-        int[][] exampleVariableOne = new int[10][5];
-        Object[][] exampleVariableTwo = new Object[10][5];
-
-        // returns the length of the rows in the array
-        int lengthOne = exampleVariableOne.length;
-        // returns the length of the columns in the array
-        int lengthTwo = exampleVariableOne[1].length;
-    }
-
-    @Test
-    void name2() {
-        String[][] elements = new String[][] {{"Hello", "world"}, {"foo", "zut"}};
-        boolean result = Arrays.stream(elements)
-                .flatMap(row -> Arrays.stream(row))
-                .noneMatch(element -> element != null);
-
-        String[][] elements2 = new String[3][3];
-        boolean result2 = Arrays.stream(elements2)
-                .flatMap(row -> Arrays.stream(row))
-                .noneMatch(element -> element != null);
-
-        var result3 = Arrays.stream(elements2)
-                .flatMap(row -> Arrays.stream(row))
-                .takeWhile(element -> element != null)
-                .count();
-
-        var result4 = Arrays.stream(elements2)
-                .flatMap(row -> Arrays.stream(row))
-                .takeWhile(element -> element != null)
-                .count();
-    }
+class MatrixOperationTest {
 
     @Test
     void getLineTest() {

@@ -50,15 +50,15 @@ public class Face {
         return oldColumn;
     }
 
-//    private final updateCubeWithNewValue(int index, Cell[] newLine) throws TooManyCellsException {
-////        if( newLine.length > cells[index].length) {
-////            throw new TooManyCellsException(newLine);
-////        }
-////        var oldColumn = new Cell[]{cells[0][index], cells[1][index], cells[2][index]};
-////        IntStream.range(0, row).boxed().forEach(i -> cells[index][i] = newLine[i]);
-////
-////        return oldColumn;
-//    }
+    private final void updateCubeWithNewValue(int index, Cell[] newLine) throws TooManyCellsException {
+        if( newLine.length > cells[index].length) {
+            throw new TooManyCellsException(newLine);
+        }
+        var oldColumn = new Cell[]{cells[0][index], cells[1][index], cells[2][index]};
+        IntStream.range(0, row).boxed().forEach(i -> cells[index][i] = newLine[i]);
+
+//        return oldColumn;
+    }
 
     @Override
     public String toString() {

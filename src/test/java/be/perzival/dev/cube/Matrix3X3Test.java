@@ -1,7 +1,6 @@
 package be.perzival.dev.cube;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.IntStream;
