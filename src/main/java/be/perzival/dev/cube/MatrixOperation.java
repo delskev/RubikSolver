@@ -1,6 +1,5 @@
 package be.perzival.dev.cube;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,14 +13,26 @@ public class MatrixOperation {
 
     public static <T> List<T> getLineByIndex(final T[][] matrix, int lineIndex) {
         return Arrays.stream(matrix[lineIndex]).collect(Collectors.toList());
-//        return IntStream.range(0, matrix.length).boxed()
-//                .map(index -> matrix[lineIndex][index])
-//                .collect(Collectors.toList());
     }
 
     public static <T> List<T> getColumnByIndex(final T[][] matrix, int columnIndex) {
         return IntStream.range(0, matrix[0].length).boxed()
                 .map(index -> matrix[index][columnIndex])
                 .collect(Collectors.toList());
+    }
+
+    public static <T> T[][] replaceLine(T[][] matrix, final T[] newValues, int rowIndex) {
+        T[][] copy = copy(matrix);
+        IntStream.range(0, rowIndex).boxed().forEach(i -> copy[i][rowIndex] = newValues[i]);
+
+        return copy;
+    }
+
+    private static final <T> T[][] copy(T[][] original) {
+        T[][] copy = (T[][]) new Object[original.length][];
+        for (int i = 0; i < original.length; ++i) {
+            copy[i] = Arrays.copyOf(original[i], original[i].length);
+        }
+        return copy;
     }
 }
