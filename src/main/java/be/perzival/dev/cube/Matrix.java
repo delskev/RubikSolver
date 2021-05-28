@@ -1,6 +1,8 @@
 package be.perzival.dev.cube;
 
 import java.util.Objects;
+import java.util.Vector;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Matrix<T> {
@@ -15,7 +17,6 @@ public class Matrix<T> {
         this.size = 0;
         this.elements = (T[][]) new Object[row][column];
     }
-
 
     /**
      * return the number of element present in the list
@@ -54,20 +55,25 @@ public class Matrix<T> {
      * @param element the element to insert. Must not be null
      * @param row     the row index
      * @param column  the column index
-     * @return true if successful
      */
-    public boolean add(T element, int row, int column) {
+    public void add(T element, int row, int column) {
         Objects.requireNonNull(element);
         validateBoundaries(row, column);
         elements[row][column] = element;
         this.size++;
-        return true;
+    }
+
+
+    public void fill(T element) {
+        IntStream.range(0, this.row  * this.column)
+                .forEach(i -> this.elements[i % this.row][i / this.row] = element);
+        this.size = this.row * this.column;
     }
 
     /**
      * get an element at specific row column
      *
-     * @param row    row index
+     * @param row row index
      * @param column column index
      * @return the element or null if not found
      */
@@ -77,15 +83,37 @@ public class Matrix<T> {
     }
 
     /**
+     * get a single row of the matrix
+     * @param row the indice of the row to get
+     * @return
+     */
+    public Vector getRow(int row) {
+        return IntStream.range(0, this.column).boxed()
+                .map(i -> this.elements[row][i] )
+                .collect(Collectors.toCollection(Vector::new));
+    }
+
+    /**
+     * get a single row of the matrix
+     * @param column the indice of the column to get
+     * @return
+     */
+    public Vector getColumn(int column) {
+        return IntStream.range(0, this.column).boxed()
+                .map(i -> this.elements[i][column] )
+                .collect(Collectors.toCollection(Vector::new));
+    }
+
+    /**
      * Remove an element at a specified coordinate
      * @param row
      * @param column
      * @return if the operation is successful
      */
-    public boolean remove(int row, int column) {
+    public void remove(int row, int column) {
         validateBoundaries(row, column);
         this.elements[row][column] = null;
-        return true;
+        this.size--;
     }
 
     /**
@@ -94,6 +122,7 @@ public class Matrix<T> {
     public void clear() {
         IntStream.range(0, this.row  * this.column)
                 .forEach(i -> this.elements[i % this.row][i / this.row] = null);
+        size = 0;
     }
 
     public String toString() {

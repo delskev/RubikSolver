@@ -5,7 +5,7 @@ import be.perzival.dev.cube.exception.BadMovementException;
 import java.util.EnumMap;
 import java.util.Map;
 
-public class Cube3X3 implements Cube{
+public class Cube3X3 implements Cube {
     private final Map<FaceSide, Face> sideFaceMap;
 
 
@@ -20,9 +20,7 @@ public class Cube3X3 implements Cube{
     }
 
     public void move(String notation) throws BadMovementException {
-        if (!Movement.isNotationValid(notation)) {
-            throw new BadMovementException(notation);
-        }
+        Movement.isNotationValid(notation);
     }
 
     public void moveDown(){

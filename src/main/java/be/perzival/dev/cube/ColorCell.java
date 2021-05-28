@@ -8,6 +8,7 @@ public enum ColorCell implements Cell{
     WHITE,
     ORANGE;
 
+
     @Override
     public String getValue() {
         return this.name().substring(0,1);

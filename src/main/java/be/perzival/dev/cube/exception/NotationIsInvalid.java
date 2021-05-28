@@ -1,6 +1,6 @@
 package be.perzival.dev.cube.exception;
 
-public class NotationIsInvalid extends Exception {
+public class NotationIsInvalid extends BadMovementException {
     private static final String ERROR_MESSAGE = "The notation provided is not a valid one: ";
 
     public NotationIsInvalid(String notation) {
