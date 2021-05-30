@@ -1,7 +1,7 @@
 package be.perzival.dev;
 
 import be.perzival.dev.cube.ColorCell;
-import be.perzival.dev.cube.Face;
+import be.perzival.dev.cube.engine.Face;
 
 import java.util.Arrays;
 import java.util.List;

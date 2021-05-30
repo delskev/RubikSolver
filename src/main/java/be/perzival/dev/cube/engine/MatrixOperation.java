@@ -1,4 +1,6 @@
-package be.perzival.dev.cube;
+package be.perzival.dev.cube.engine;
+
+import be.perzival.dev.cube.engine.matrix.Matrix;
 
 import java.util.Arrays;
 import java.util.Collections;

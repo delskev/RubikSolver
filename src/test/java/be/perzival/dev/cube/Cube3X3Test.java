@@ -1,5 +1,6 @@
 package be.perzival.dev.cube;
 
+import be.perzival.dev.cube.engine.Movement;
 import be.perzival.dev.cube.exception.BadMovementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

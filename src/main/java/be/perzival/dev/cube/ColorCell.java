@@ -1,18 +1,22 @@
 package be.perzival.dev.cube;
 
-public enum ColorCell implements Cell{
+import be.perzival.dev.cube.engine.Cell;
+
+public enum ColorCell implements Cell {
     RED,
     BLUE,
     GREEN,
     YELLOW,
     WHITE,
-    ORANGE;
+    ORANGE,
+    NONE;
 
 
     @Override
     public String getValue() {
         return this.name().substring(0,1);
     }
+
 
     @Override
     public String toString() {

@@ -1,5 +1,6 @@
 package be.perzival.dev.cube;
 
+import be.perzival.dev.cube.engine.Face;
 import be.perzival.dev.cube.exception.BadMovementException;
 import be.perzival.dev.cube.exception.WrongSideException;
 

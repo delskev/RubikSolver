@@ -1,6 +1,6 @@
 package be.perzival.dev.cube.exception;
 
-import be.perzival.dev.cube.Cell;
+import be.perzival.dev.cube.engine.Cell;
 
 import java.util.Arrays;
 

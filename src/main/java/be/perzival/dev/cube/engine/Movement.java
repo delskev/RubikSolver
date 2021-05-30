@@ -1,5 +1,6 @@
-package be.perzival.dev.cube;
+package be.perzival.dev.cube.engine;
 
+import be.perzival.dev.cube.Cube;
 import be.perzival.dev.cube.exception.NotationIsInvalid;
 import be.perzival.dev.cube.exception.WrongSideException;
 import org.apache.commons.lang3.StringUtils;

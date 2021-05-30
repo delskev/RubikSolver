@@ -1,5 +1,7 @@
 package be.perzival.dev.cube;
 
+import be.perzival.dev.cube.engine.Face;
+import be.perzival.dev.cube.engine.Movement;
 import be.perzival.dev.cube.exception.BadMovementException;
 
 import java.util.EnumMap;
@@ -7,7 +9,6 @@ import java.util.Map;
 
 public class Cube3X3 implements Cube {
     private final Map<FaceSide, Face> sideFaceMap;
-
 
     public Cube3X3() {
         this.sideFaceMap = new EnumMap<>(FaceSide.class);
