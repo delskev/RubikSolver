@@ -24,7 +24,6 @@ public class Matrix<T> implements Iterable<T>{
         this.height = height;
         this.width = width;
         this.elements = (T[][]) new Object[height][width];
-
     }
 
     public int size() {

@@ -1,27 +1,27 @@
 package be.perzival.dev.cube;
 
 import be.perzival.dev.cube.engine.Face;
-import be.perzival.dev.cube.engine.Movement;
+import be.perzival.dev.cube.engine.movement.MovementType;
 import be.perzival.dev.cube.exception.BadMovementException;
 
 import java.util.EnumMap;
 import java.util.Map;
 
 public class Cube3X3 implements Cube {
-    private final Map<FaceSide, Face> sideFaceMap;
+    private final Map<MovementType, Face> sideFaceMap;
 
     public Cube3X3() {
-        this.sideFaceMap = new EnumMap<>(FaceSide.class);
-        this.sideFaceMap.put(FaceSide.FRONT, Face.of3X3(ColorCell.WHITE));
-        this.sideFaceMap.put(FaceSide.UP, Face.of3X3(ColorCell.BLUE));
-        this.sideFaceMap.put(FaceSide.LEFT, Face.of3X3(ColorCell.ORANGE));
-        this.sideFaceMap.put(FaceSide.RIGHT, Face.of3X3(ColorCell.RED));
-        this.sideFaceMap.put(FaceSide.DOWN, Face.of3X3(ColorCell.GREEN));
-        this.sideFaceMap.put(FaceSide.BOTTOM, Face.of3X3(ColorCell.YELLOW));
+        this.sideFaceMap = new EnumMap<>(MovementType.class);
+        this.sideFaceMap.put(MovementType.FRONT, Face.of3X3(ColorCell.WHITE));
+        this.sideFaceMap.put(MovementType.UP, Face.of3X3(ColorCell.BLUE));
+        this.sideFaceMap.put(MovementType.LEFT, Face.of3X3(ColorCell.ORANGE));
+        this.sideFaceMap.put(MovementType.RIGHT, Face.of3X3(ColorCell.RED));
+        this.sideFaceMap.put(MovementType.DOWN, Face.of3X3(ColorCell.GREEN));
+        this.sideFaceMap.put(MovementType.BOTTOM, Face.of3X3(ColorCell.YELLOW));
     }
 
     public void move(String notation) throws BadMovementException {
-        Movement.isNotationValid(notation);
+        //to be implemented
     }
 
     public void moveDown(){
@@ -53,8 +53,8 @@ public class Cube3X3 implements Cube {
 
     }
 
-    public Face getFace(FaceSide faceSide) throws BadMovementException {
-        return this.sideFaceMap.get(faceSide);
+    public Face getFace(MovementType movementType) throws BadMovementException {
+        return this.sideFaceMap.get(movementType);
     }
 
 }

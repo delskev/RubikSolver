@@ -1,6 +1,7 @@
 package be.perzival.dev.cube;
 
-import be.perzival.dev.cube.engine.Movement;
+import be.perzival.dev.cube.engine.movement.Movement;
+import be.perzival.dev.cube.engine.movement.MovementType;
 import be.perzival.dev.cube.exception.BadMovementException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,18 +13,7 @@ import java.util.List;
 
 class Cube3X3Test {
 
-    @ParameterizedTest
-    @MethodSource("expectedMovement")
-    void movementInstanciation(Movement expectedMovement)  {
-        //given
-        //when
-        Movement actualMovement = Assertions.assertDoesNotThrow(() -> Movement.of(expectedMovement.getNotation()));
-        //then
-        Assertions.assertEquals(expectedMovement.getSideToMove(), actualMovement.getSideToMove());
-        Assertions.assertEquals(expectedMovement.getIteration(), actualMovement.getIteration());
-        Assertions.assertEquals(expectedMovement.isClockwise(), actualMovement.isClockwise());
-        Assertions.assertEquals(expectedMovement.getNotation(), actualMovement.getNotation());
-    }
+
 
     @ParameterizedTest
     @ValueSource(strings = {
@@ -59,33 +49,5 @@ class Cube3X3Test {
         Assertions.assertDoesNotThrow(() -> rubik.move("u"));
         //then
 
-    }
-
-    private static List<Movement> expectedMovement() {
-        return List.of(
-                Movement.of(Cube.FaceSide.UP, 1, true),
-                Movement.of(Cube.FaceSide.UP, 1, false),
-                Movement.of(Cube.FaceSide.UP, 2, true),
-
-                Movement.of(Cube.FaceSide.DOWN, 1, true),
-                Movement.of(Cube.FaceSide.DOWN, 1, false),
-                Movement.of(Cube.FaceSide.DOWN, 2, true),
-
-                Movement.of(Cube.FaceSide.LEFT, 1, true),
-                Movement.of(Cube.FaceSide.LEFT, 1, false),
-                Movement.of(Cube.FaceSide.LEFT, 2, true),
-
-                Movement.of(Cube.FaceSide.RIGHT, 1, true),
-                Movement.of(Cube.FaceSide.RIGHT, 1, false),
-                Movement.of(Cube.FaceSide.RIGHT, 2, true),
-
-                Movement.of(Cube.FaceSide.BOTTOM, 1, true),
-                Movement.of(Cube.FaceSide.BOTTOM, 1, false),
-                Movement.of(Cube.FaceSide.BOTTOM, 2, true),
-
-                Movement.of(Cube.FaceSide.FRONT, 1, true),
-                Movement.of(Cube.FaceSide.FRONT, 1, false),
-                Movement.of(Cube.FaceSide.FRONT, 2, true)
-        );
     }
 }

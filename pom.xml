@@ -14,6 +14,7 @@
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <junit-jupiter-engine.version>5.7.0</junit-jupiter-engine.version>
         <log4j.version>2.11.1</log4j.version>
+        <value.version>2.8.2</value.version>
     </properties>
 
     <dependencies>
@@ -22,7 +23,6 @@
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
         </dependency>
-
         <!--Logger dependencies-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -34,7 +34,6 @@
             <artifactId>log4j-api</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-
         <!--Test dependencies-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -54,8 +53,6 @@
             <version>3.19.0</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
 
 </project>
